@@ -30,19 +30,19 @@ public class CiudadTest {
     @Test
     public void createTest(){
         CiudadDao ciudadDao = new factories.implementations.ciudadDao.CiudadDao();
-        Ciudad ciudades = new Ciudad(new Long("2"), "Chihuahua", true);
+        Ciudad ciudades = new Ciudad(new Long("1"), "Chihuahua", true);
         ciudadDao.create(ciudades);
-        Ciudad ciudadToTry = ciudadDao.read(new Long("2"));
+        Ciudad ciudadToTry = ciudadDao.read(new Long("1"));
         Assert.assertNotNull(ciudadToTry);
     }
 
     @Test
     public void updateTest(){
         CiudadDao ciudadDao = new factories.implementations.ciudadDao.CiudadDao();
-        Ciudad ciudad =  ciudadDao.read(new Long("4"));
+        Ciudad ciudad =  ciudadDao.read(new Long("1"));
         ciudad.setNombre("Chihuahua");
         ciudadDao.update(ciudad);
-        Ciudad ciudadToTry = ciudadDao.read(new Long("4"));
+        Ciudad ciudadToTry = ciudadDao.read(new Long("1"));
         Assert.assertNotNull(ciudadToTry);
 
     }

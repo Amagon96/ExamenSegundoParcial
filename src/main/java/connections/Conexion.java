@@ -21,9 +21,9 @@ public class Conexion {
     }
 
     private void createConexion()throws SQLException, ClassNotFoundException{
-        String urlDatabase =  "jdbc:postgresql://localhost:5432/examen";
-        Class.forName("org.postgresql.Driver");
-        conn = DriverManager.getConnection(urlDatabase,  "postgres", "Azul");
+        String urlDatabase =  "jdbc:mysql://localhost:1521/examen";
+        Class.forName("com.mysql.jdbc.Driver");
+        conn = DriverManager.getConnection(urlDatabase,  "mysql", "Azul");
     }
 
     public Connection getConn() {
